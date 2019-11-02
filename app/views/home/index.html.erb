@@ -1,0 +1,16 @@
+<div class = "Grand_Titre" ><h1>Bienvenue sur The Gossip Project</h1>
+  <h4>Lâche-toi et viens contribuer avec les autres gossipeurs. Pour créer un nouveau gossip,</h4>
+  <%= link_to "Crée un potin", new_gossip_path, class:'btn btn-outline-primary'%>
+</div>
+
+<div class = "Show_Gossip"><% @gossip.each do |i| %>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= i.author.first_name %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= i.title %></h6>
+      <p class="card-text"><%= i.content %></p>
+      <%= link_to "Voir le potin", gossip_path(i.id), class:'btn btn-primary' %>
+      <%= link_to "Auteur", profile_path(i.author.id), class:'btn btn-outline-primary' %>
+    </div>
+  </div>
+</div><% end %>

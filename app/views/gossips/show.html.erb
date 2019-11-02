@@ -1,0 +1,9 @@
+<h1>Bienvenue sur le Gossip <%= @gossip.id %> </h1>
+<h4>Lâche-toi et viens contribuer avec les autres gossipeurs. Pour créer un nouveau gossip,</h4>
+
+<p> Voici l'auteur : <%= @gossip.author.first_name %><br/>
+Ce jeune auteur viens de la ville de <%= @gossip.author.city.name %><br/>
+<%= @gossip.title %><br/>
+<%= @gossip.content %><br/></p>
+
+<%= link_to "Plus d'info" , profile_path(@gossip.author.id), class:'btn btn-info' %>
