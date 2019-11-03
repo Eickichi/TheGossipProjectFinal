@@ -1,14 +1,14 @@
 <div class ="Container">
     <h1>Voici le potin n° <%= @gossip.id %> </h1>
-    
-    <p> Voici l'auteur : <%= @gossip.author.first_name %><br/>
-    Ce jeune auteur viens de la ville de <%= @gossip.author.city.name %><br/>
-    <%= @gossip.title %><br/>
-    <%= @gossip.content %><br/></p>
-    
-    <div class = "button_info">
-        <p>Si tu veux voir plus d'info a propos du potin c'est par ici :<br/>
-        <%= link_to "Plus d'info", profile_path(@gossip.author.id), class: 'btn btn-info' %>
-        <%= link_to "La ville", city_path(@gossip.author.city.id), class: 'btn btn-info' %></p>
-    </div>
+    <p> 
+        Voici l'auteur : <%= @gossip.author.first_name %><br/>
+        Ce jeune auteur viens de la ville de <%= @gossip.author.city.name %><br/>
+        <%= @gossip.title %><br/>
+        <%= @gossip.content %><br/></p>
+        <div class = "button_info">
+            Si tu veux voir plus d'info a propos du potin c'est par ici :<br/>
+            <%= link_to "Plus d'info", profile_path(@gossip.author.id), class: 'btn btn-info' %>
+            <%= link_to "La ville", city_path(@gossip.author.city.id), class: 'btn btn-info' %>
+        </div>
+    </p>
 </div>
