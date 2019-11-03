@@ -3,14 +3,22 @@
   <%= link_to "Crée un potin", new_gossip_path, class:'btn btn-outline-primary'%>
 </div>
 
-<div class = "Show_Gossip"><% @gossip.each do |i| %>
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title"><%= i.author.first_name %></h5>
-      <h6 class="card-subtitle mb-2 text-muted"><%= i.title %></h6>
-      <p class="card-text"><%= i.content %></p>
-      <%= link_to "Voir le potin", gossip_path(i.id), class:'btn btn-primary' %>
-      <%= link_to "Auteur", profile_path(i.author.id), class:'btn btn-outline-primary' %>
+<div class="card-deck">
+  <%@gossip.all.each do |i|%>
+    <div class="col-sm-4 mb-3">
+      <div class="card">
+        <div class="card-header">
+          Gossip #<%=i.id%>
+        </div>
+        <div class="card-body align-center">
+          <p><%=i.title%><br/>
+          <%= i.content %></p>
+          <div class="row justify-content-between align-self-center mx-3">
+            <%= link_to "Voir le potin", gossip_path(i.id), class:'btn btn-primary' %>
+            <%= link_to "Auteur", profile_path(i.author.id), class:'btn btn-outline-primary' %>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div><% end %>
+  <%end%>
+</div>

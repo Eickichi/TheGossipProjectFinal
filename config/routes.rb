@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :team
   resources :profile
   resources :gossips
+  resources :city
 end

@@ -1,6 +1,10 @@
 <h1>Bienvenue sur la page de <%= @user.first_name %></h1>
 
-<p><%= @user.first_name %> a rejoint le <%= @user.created_at %><br/>
+<p>
+   <%= @user.first_name %> a rejoint le <%= @user.created_at %><br/>
    <%= @user.first_name %> a <%= @user.age %> ans<br/>
    <%= @user.first_name %> viens de la ville de <%= @user.city.name %><br/>
-   Pour contacter <%= @user.first_name %> voici sont adresse mail : <%= @user.email %><br/></p>
+   Pour contacter <%= @user.first_name %> voici sont adresse mail : <%= @user.email %><br/>
+   Si jamais tu veux voir les infos sur la ville de <%= @user.first_name %> tu peux le faire en cliquant ici : <br/>
+   <%= link_to "Par ici", city_path(@user.city.id), class: 'btn btn-outline-info' %>
+</p>
